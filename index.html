@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>KNN Idiomas América — Garanta sua vaga</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-badge">Evento Especial</div>
+      <h1 class="hero-title">Fale o mundo.<br/><span class="accent">Comece agora.</span></h1>
+      <p class="hero-sub">Preencha o formulário e nossa equipe entra em contato com uma proposta exclusiva pra você.</p>
+    </header>
+
+    <!-- FORM CARD -->
+    <main class="card" id="form-section">
+
+      <div id="form-view">
+        <h2 class="card-title">Seus dados</h2>
+        <p class="card-hint">Leva menos de 30 segundos ✦</p>
+
+        <form id="lead-form" novalidate>
+
+          <div class="field-group">
+            <label for="nome">Nome completo <span class="required">*</span></label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Como você se chama?"
+              autocomplete="name"
+              inputmode="text"
+              required
+            />
+            <span class="field-error" id="erro-nome"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="whatsapp">WhatsApp <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="whatsapp"
+              name="whatsapp"
+              placeholder="(47) 9 9999-9999"
+              autocomplete="tel"
+              inputmode="numeric"
+              maxlength="16"
+              required
+            />
+            <span class="field-error" id="erro-whatsapp"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="email">E-mail <span class="optional">(opcional)</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu@email.com"
+              autocomplete="email"
+              inputmode="email"
+            />
+            <span class="field-error" id="erro-email"></span>
+          </div>
+
+          <div id="submit-error" class="submit-error" aria-live="polite"></div>
+
+          <button type="submit" id="btn-submit" class="btn-primary">
+            <span class="btn-text">Quero ser contactado</span>
+            <span class="btn-loader" hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div id="success-view" hidden>
+        <div class="success-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2 class="success-title">Recebemos!</h2>
+        <p class="success-text">Seus dados foram salvos. Em breve nossa equipe fala com você pelo WhatsApp. 🎉</p>
+      </div>
+
+    </main>
+
+    <footer class="page-footer">
+      <p>KNN Idiomas América · Joinville, SC</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
