@@ -149,21 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
       timestamp: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
     };
 
-    try {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors", // necessário para Apps Script
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      // no-cors não retorna status, assumimos sucesso se não lançou exceção
-      showSuccess();
-    } catch (err) {
-      console.error("Erro ao enviar:", err);
-      showSubmitError("Não conseguimos enviar. Verifique sua conexão e tente novamente.");
-      submitted = false;
-      setLoading(false);
-    }
+   try {
+  await fetch(url, { method: "GET", mode: "no-cors" });
+  showSuccess();
+} catch (err) {
+  console.error("Erro:", err);
+  showSubmitError("Não foi possível enviar. Tente novamente.");
+  submitted = false;
+  setLoading(false);
+}
   });
 });
