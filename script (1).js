@@ -1,7 +1,7 @@
 /* ===================================================
    CONFIGURAÇÃO — substitua a URL abaixo pela sua
    =================================================== */
-const APPS_SCRIPT_URL = https://script.google.com/macros/s/AKfycbxIBRdpzjd_hgfcZcLmkgEp4MqKtfcQb3-i2OTKUJAowoseRm6G2Xh0-DBQptTsipXjlA/exec;
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIBRdpzjd_hgfcZcLmkgEp4MqKtfcQb3-i2OTKUJAowoseRm6G2Xh0-DBQptTsipXjlA/exec;
 // Exemplo: "https://script.google.com/macros/s/AKfycb.../exec"
 
 /* ===================================================
