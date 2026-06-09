@@ -1,0 +1,350 @@
+/* ===========================
+   TOKENS — KNN brand palette
+   =========================== */
+:root {
+  --bg:           #070421;
+  --purple-mid:   #8349eb;
+  --purple-light: #8883f7;
+  --pink:         #f70052;
+  --white:        #fafcff;
+  --surface:      rgba(255,255,255,0.06);
+  --surface-2:    rgba(255,255,255,0.04);
+  --border:       rgba(255,255,255,0.1);
+  --border-focus: rgba(136,131,247,0.7);
+  --text:         #fafcff;
+  --text-muted:   rgba(250,252,255,0.45);
+  --text-soft:    rgba(250,252,255,0.7);
+  --danger:       #ff5c7a;
+  --success:      #5cba8a;
+  --radius:       16px;
+  --radius-sm:    10px;
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+/* ===========================
+   RESET
+   =========================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   BACKGROUND
+   =========================== */
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(131,73,235,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 80%, rgba(247,0,82,0.2) 0%, transparent 60%),
+    linear-gradient(160deg, #070421 0%, #0d0630 50%, #070421 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-glow {
+  position: fixed;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(136,131,247,0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===========================
+   LAYOUT
+   =========================== */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 0 22px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===========================
+   HEADER / LOGO
+   =========================== */
+.header {
+  padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple-light);
+  opacity: 0.85;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.hero {
+  padding: 36px 0 28px;
+  width: 100%;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 9vw, 3rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(90deg, var(--purple-light) 0%, var(--pink) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-body {
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.flags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.flags img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1.5px rgba(255,255,255,0.15);
+}
+
+/* ===========================
+   CARD
+   =========================== */
+.card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px 32px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: left;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple-light);
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   FORM
+   =========================== */
+.field-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+  margin-bottom: 7px;
+}
+
+.req { color: var(--pink); }
+.opt { color: var(--text-muted); font-weight: 400; }
+
+input {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 13px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+
+input::placeholder { color: var(--text-muted); }
+
+input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(136,131,247,0.15);
+}
+
+input.is-error {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255,92,122,0.12);
+}
+
+.field-error {
+  display: block;
+  font-size: 12px;
+  color: var(--danger);
+  margin-top: 5px;
+  min-height: 16px;
+}
+
+.submit-error {
+  font-size: 13px;
+  color: var(--danger);
+  background: rgba(255,92,122,0.08);
+  border: 1px solid rgba(255,92,122,0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: none;
+}
+.submit-error.visible { display: block; }
+
+/* ===========================
+   BUTTON
+   =========================== */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--purple-mid) 0%, var(--pink) 100%);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 15px 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--pink) 0%, var(--purple-mid) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-text, .btn-loader { position: relative; z-index: 1; }
+
+.btn-loader svg { animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===========================
+   SUCCESS
+   =========================== */
+#success-view {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(92,186,138,0.1);
+  border: 1.5px solid rgba(92,186,138,0.3);
+  color: var(--success);
+  margin-bottom: 18px;
+  animation: pop 0.45s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+
+@keyframes pop {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.success-body {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.65;
+  max-width: 290px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ===========================
+   REDUCED MOTION
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
